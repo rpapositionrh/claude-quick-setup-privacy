@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      text-align: right;
+    }
+    .step {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+    }
+    .step.active {
+      border-color: #007bff;
+      background: #f0f7ff;
+    }
+    .step.completed {
+      border-color: #28a745;
+      background: #f0fff4;
+    }
+    .step-number {
+      float: right;
+      margin-left: 10px;
+      margin-right: 0;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #007bff;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+    }
+    .step.completed .step-number {
+      background: #28a745;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .checkmark {
+      color: #28a745;
+      margin-left: 10px;
+      display: none;
+    }
+    .step.completed .checkmark {
+      display: inline;
+    }
+    .instruction-list {
+      padding-right: 20px;
+      padding-left: 0;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .instruction-list li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #666;
+      font-style: italic;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>מדריך התקנת Claude</h2>
+  
+  <div class="step active" id="step1">
+    <span class="step-number">1</span>
+    <strong>הרשמה ל-Claude</strong>
+    <span class="checkmark">✓</span>
+    <p>עקבו אחר השלבים הבאים:</p>
+    <ol class="instruction-list">
+      <li>לחצו על <span class="highlight">"Open Claude"</span> למטה</li>
+      <li>הכניסו את כתובת המייל מהעבודה (@company.com)</li>
+      <li>לחצו על <span class="highlight">"Continue with email"</span></li>
+      <li>בדקו את המייל שלכם לקבלת קוד האימות</li>
+      <li>הזינו את הקוד להשלמת ההרשמה</li>
+      <li>אשרו את תנאי השימוש</li>
+    </ol>
+    <button id="signupButton">Open Claude</button>
+  </div>
+
+  <div class="step" id="step2">
+    <span class="step-number">2</span>
+    <strong>הוספה למועדפים</strong>
+    <span class="checkmark">✓</span>
+    <p>הוספת Claude למועדפים לגישה מהירה</p>
+    <button id="bookmarkButton" disabled>הוספה למועדפים</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
